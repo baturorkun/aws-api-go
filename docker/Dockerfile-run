@@ -1,0 +1,14 @@
+FROM golang:1.12.10-alpine3.10
+
+ARG USER_ID
+COPY ./build/aws-api /aws-api
+COPY ./conf/app.ini-dist /conf/app.ini
+
+RUN adduser -h /builder/ -D -u "$USER_ID" jenkins \
+    && chmod +x /aws-api \
+    && chown jenkins -R /aws-api \
+    && chown jenkins -R /conf/app.ini
+
+USER jenkins
+
+CMD [ "/aws-api", "/conf/app.ini" ]

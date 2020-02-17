@@ -1,0 +1,23 @@
+version: '3'
+services:
+  aws-api:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+      args:
+        USER_ID: 1000
+        PROJECT: aws-api
+        AWS_DEFAULT_REGION: ${AWS_DEFAULT_REGION}
+        AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+        AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+        #VAULT_TOKEN: ${VAULT_TOKEN}
+    env_file:
+      - ".env"
+    image: aws-api
+    container_name: aws-api
+    restart: always
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./:/builder/src/aws-api
+

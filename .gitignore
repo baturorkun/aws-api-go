@@ -1,0 +1,13 @@
+.idea/
+.DS_Store
+runtime/*
+vendor
+conf/app.ini
+deploy.sh
+aws-api
+.env
+data/keys/*
+terraform/*
+terraform
+
+

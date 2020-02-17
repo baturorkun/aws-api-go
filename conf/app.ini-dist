@@ -1,0 +1,30 @@
+[app]
+
+AllowIps = "192.168.1.1,172.30.11.12,192.168.10.100"
+
+AwsCredential = "SharedConfigEnable"
+
+# Values: Environment, SharedConfigEnable, NewStaticCredentials
+
+AwsRegion =""
+AwsAccessKeyId =""
+AwsSecretAccessKey =""
+
+TokenSalt = "hJK3d6ndjfTU9fnkln912bgPOPa"
+
+ScriptsPath = "scripts"
+
+LogsPath = "logs"
+
+AwsSesSenderEmail = "test@domain.com
+
+[mailgroups]
+admin = "batur@domain.com"
+devops = "devops@domain.com"
+manager = "maneger@domain.com"
+
+[server]
+RunMode = debug
+Port = :8000
+ReadTimeout = 60
+WriteTimeout = 60
